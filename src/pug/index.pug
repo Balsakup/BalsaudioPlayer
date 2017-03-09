@@ -1,0 +1,35 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title BalsaudioPlayer
+        link(rel="stylesheet", href="css/app.css")
+        link(rel="stylesheet", href="css/fonts.css")
+    body
+        audio(id="audio", src="sounds/Roadtrip Through Europe 13 - Jan Chmelar [Drum&Bass].mp3", preload="metadata")
+
+        .player
+            .player__header
+                canvas(style="background-color: transparent;", width="400", height="100").player__visualizer
+                h1.player__title Aucun titre
+                span.player__volume.volume-3
+            .player__body
+                .player__progress
+                    span.progress__current 00:00
+                    span.progress__total 00:00
+                    .progress__bar
+                        .bar
+                        .cursor
+                        .buffer
+                .player__controls
+                    button(type="button").controls__random
+                    button(type="button").controls__prev
+                    button(type="button").controls__mode.play
+                    button(type="button").controls__next
+                    button(type="button").controls__loop
+                    button(type="button").controls__volume-less
+                    button(type="button").controls__volume-plus
+
+        script(src="js/jquery.min.js")
+        script(src="js/app.js")
