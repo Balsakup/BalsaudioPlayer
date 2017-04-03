@@ -1,27 +1,28 @@
 {
-  "name": "balsaudioplayer",
+  "name": "lpatc-projet-js",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server:dev": "gulp server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Balsakup/BalsaudioPlayer.git"
+    "url": "git+https://github.com/Balsakup/LPATC-Projet-JS.git"
   },
-  "author": "Balsakup <balsakup@gmail.com>",
+  "author": "Quentin CATHERINE <quentin.catherine@etu.unicaen.fr>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Balsakup/BalsaudioPlayer/issues"
+    "url": "https://github.com/Balsakup/LPATC-Projet-JS/issues"
   },
-  "homepage": "https://github.com/Balsakup/BalsaudioPlayer#readme",
+  "homepage": "https://github.com/Balsakup/LPATC-Projet-JS#readme",
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-pug": "^3.2.0",
+    "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0"
   }
 }

@@ -1,0 +1,355 @@
+@import "vendor/reset"
+
+body, html
+    background-color: #263238
+
+    font-family: "Open Sans", sans-serif
+    font-size: 16px
+    font-weight: 400
+    color: #000
+
+*
+    box-sizing: border-box
+
+#player
+    display: none
+
+.player
+    position: absolute
+    top: 50px
+    left: 50%
+
+    transform: translateX(-50%)
+
+    width: 400px
+
+    border-radius: 15px
+    overflow: hidden
+
+    box-shadow: 0 5px 10px rgba(#000, .5)
+
+    .player__header
+        position: relative
+
+        height: 140px
+
+        overflow: hidden
+
+        background-color: #81C784
+
+        .header__background
+            position: absolute
+            top: 0
+            left: 0
+
+            width: 100%
+            height: 100%
+
+            background-size: 120%
+            background-position: center
+
+        .header__cover
+            position: absolute
+            bottom: 20px
+            left: 20px
+
+            width: 60px
+            height: 60px
+
+            box-shadow: 0 2px 3px rgba(#000, .7)
+
+            border: 2px solid #FFF
+
+        .header__author, .header__title
+            position: absolute
+            left: 100px
+
+            color: #FFF
+
+            text-shadow: 0 1px 1px rgba(#000, .5)
+
+        .header__author
+            bottom: 50px
+
+            font-size: 1.2em
+
+        .header__title
+            bottom: 30px
+
+            font-size: .8em
+
+        .header__drawer
+            position: absolute
+            top: 0
+            left: 0
+
+            background-color: transparent
+
+    .player__progress
+        position: relative
+
+        height: 30px
+        line-height: 30px
+
+        background-color: #455A64
+
+        touch-callout: none
+        user-select: none
+
+        .progress__current, .progress__total
+            position: absolute
+
+            font-size: .7em
+            color: #FFF
+            //text-shadow: 0 1px 1px #000
+
+        .progress__current
+            left: 10px
+
+        .progress__total
+            right: 10px
+
+        .progress__bar
+            position: absolute
+            top: 12px
+            right: 60px
+            left: 60px
+
+            background-color: #37474F
+
+            height: 6px
+
+            border-radius: 3px
+
+            .buffer, .bar
+                position: absolute
+                top: 0
+                left: 0
+
+                height: 6px
+
+                border-radius: 3px
+
+            .buffer
+                background-color: #546E7A
+
+            .bar
+                background-color: #66BB6A
+
+            .cursor
+                position: absolute
+                top: 0
+                left: 0
+
+                height: 12px
+                width: 12px
+                margin: -3px -6px
+
+                background-color: #4CAF50
+
+                border-radius: 50%
+
+                box-shadow: 0 1px 1px rgba(#000, .3)
+
+                cursor: pointer
+
+    .player__controls
+        display: flex
+        justify-content: space-between
+
+        padding: 0 20px
+
+        background-color: #CFD8DC
+
+        & > *
+            height: 60px
+            line-height: 60px
+
+            text-align: center
+
+        .controls__settings, .controls__volume
+            flex: 25% 0 0
+
+        .controls__manage
+            flex: 50% 0 0
+
+        button
+            background: none
+
+            border: none
+
+            font-size: 1.2em
+            color: #9E9E9E
+
+            cursor: pointer
+
+            outline: none
+
+            width: 30px
+
+            &:hover
+                color: #616161
+
+            &.active
+                color: #4CAF50
+
+            &::after
+                font-family: "fontawesome"
+
+            &.controls__loop
+                &::after
+                    content: "\f01e"
+
+            &.controls__random
+                &::after
+                    content: "\f074"
+
+            &.controls__prev
+                &::after
+                    content: "\f04a"
+
+            &.controls__mode
+                &::after, &.play::after
+                    content: "\f04b"
+
+                &.pause::after
+                    content: "\f04c"
+
+            &.controls__next
+                &::after
+                    content: "\f04e"
+
+        .controls__volume
+            position: relative
+
+            input[type="range"]
+                appearance: none
+
+                width: 100%
+
+                background-color: #66BB6A
+
+                height: 6px
+
+                border-radius: 3px
+
+                &::-moz-range-track
+                    appearance: none
+
+                    width: 100%
+
+                    background-color: #66BB6A
+
+                    height: 6px
+
+                    border-radius: 3px
+
+                &::-webkit-slider-thumb
+                    appearance: none
+
+                    width: 12px
+                    height: 12px
+
+                    background-color: #4CAF50
+
+                    border-radius: 50%
+
+                    box-shadow: 0 1px 1px rgba(#000, .3)
+
+                    cursor: pointer
+
+                &::-moz-range-thumb
+                    appearance: none
+
+                    width: 12px
+                    height: 12px
+
+                    background-color: #4CAF50
+
+                    border-radius: 50%
+
+                    box-shadow: 0 1px 1px rgba(#000, .3)
+
+                    cursor: pointer
+
+                    border: none
+
+                &:focus
+                    outline: none
+
+            .volume__bar
+                position: absolute
+                top: (60px - 6px) / 2
+
+                height: 6px
+                width: 100%
+
+                background-color: #66BB6A
+
+                border-radius: 3px
+
+                .cursor
+                    position: absolute
+                    top: 0
+                    left: 0
+
+                    height: 12px
+                    width: 12px
+                    margin: -3px -6px
+
+                    background-color: #4CAF50
+
+                    border-radius: 50%
+
+                    box-shadow: 0 1px 1px rgba(#000, .3)
+
+                    cursor: pointer
+
+    .player__playlist
+        counter-reset: counter
+
+        max-height: 200px
+        overflow-y: scroll
+
+        background-color: #FFF
+
+        &::-webkit-scrollbar
+            background-color: #E0E0E0
+
+            width: 5px
+
+        &::-webkit-scrollbar-thumb
+            background-color: #BDBDBD
+
+        li
+            color: #757575
+            font-size: .9em
+
+            padding: 15px 20px
+
+            cursor: pointer
+
+            &::before
+                content: counter(counter)
+
+                counter-increment: counter
+
+                color: #424242
+                font-weight: 600
+                font-size: .8em
+
+                display: inline-block
+
+                width: 25px
+
+            &.current::before
+                content: "\f04b"
+
+                font-family: fontawesome
+                color: #4CAF50
+
+            &:hover
+                background-color: #E0E0E0
+
+            &:not(:last-child)
+                border-bottom: 1px solid #E0E0E0
