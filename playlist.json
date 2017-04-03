@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Roadtrip Through Europe 13",
+        "author": "Jan Chmelar",
+        "file": "musics/Roadtrip Through Europe 13 - Jan Chmelar [Drum&Bass].mp3",
+        "cover": "img/covers/Roadtrip Through Europe 13 - Jan Chmelar [Drum&Bass].jpg"
+    },
+    {
+        "title": "A new beginning",
+        "author": "Bensound",
+        "file": "musics/bensound-anewbeginning.mp3",
+        "cover": "img/covers/anewbeginning.jpg"
+    },
+    {
+        "title": "Dubstep",
+        "author": "Bensound",
+        "file": "musics/bensound-dubstep.mp3",
+        "cover": "img/covers/dubstep.jpg"
+    },
+    {
+        "title": "Epic",
+        "author": "Bensound",
+        "file": "musics/bensound-epic.mp3",
+        "cover": "img/covers/epic.jpg"
+    },
+    {
+        "title": "Funny Song",
+        "author": "Bensound",
+        "file": "musics/bensound-funnysong.mp3",
+        "cover": "img/covers/funnysong.jpg"
+    },
+    {
+        "title": "Retrosoul",
+        "author": "Bensound",
+        "file": "musics/bensound-retrosoul.mp3",
+        "cover": "img/covers/retrosoul.jpg"
+    }
+]
