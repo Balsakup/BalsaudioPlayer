@@ -159,6 +159,15 @@
             }
         })
 
+        audio.on('progress durationchange', function() {
+            if (this.duration) {
+                var buffer  = this.buffered.length > 0 ? this.buffered.end(0) : this.duration
+                var perCent = buffer / this.duration * 100
+
+                progress_buffer.css('width', perCent + '%')
+            }
+        })
+
         controls_loop.on('click', function() {
             if (controls_random.hasClass('active')) {
                 controls_random.trigger('click')
